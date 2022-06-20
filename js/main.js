@@ -46,7 +46,7 @@ let images = [
     let imgList=carouselBox.children
     //? associo alla var imglist i figli di carouselBox cioè le img create , per avrere la lista 
     let imgListBox=imgBox.children
-    console.log(imgList)
+    console.log(imgListBox)
 
     //*alla var di partenza rimuovo il d-none e aggiungo la classe active per farla vedere
     imgList[activeElement].classList.add('active');
@@ -71,7 +71,7 @@ let images = [
         imgList[activeElement].classList.remove('active');
         imgList[activeElement].classList.add('d-none');
         //*{dalla variabile di partenza rimuovo la classe img_visibility }
-        imgList[activeElement].classList.remove('img_visibility');
+        imgListBox[activeElement].classList.remove('img_visibility');
         
 
         //*incremento il valore di 1 
@@ -85,6 +85,8 @@ let images = [
         //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
         imgList[activeElement].classList.remove('d-none');
         imgList[activeElement].classList.add('active');
+         //*{dalla variabile di partenza rimuovo la classe img_visibility }
+         imgListBox[activeElement].classList.add('img_visibility');
 
        
 
@@ -99,6 +101,8 @@ let images = [
         //*dalla variabile di partenza rimuovo l'active e aggiungo la classe d-none per non farla vedere
         imgList[activeElement].classList.remove('active');
         imgList[activeElement].classList.add('d-none');
+        //*{dalla variabile di partenza rimuovo la classe img_visibility }
+        imgListBox[activeElement].classList.remove('img_visibility');
 
         //*decremento il valore di 1 
         activeElement --;
@@ -111,6 +115,8 @@ let images = [
         //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
         imgList[activeElement].classList.remove('d-none');
         imgList[activeElement].classList.add('active');
+        //*{dalla variabile di partenza rimuovo la classe img_visibility }
+        imgListBox[activeElement].classList.add('img_visibility');
 
 
         console.log(activeElement);
