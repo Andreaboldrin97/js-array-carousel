@@ -23,7 +23,7 @@ let images = [
         newImg.setAttribute(`src` , images[i]);
 
         //*aggiungo la classe d-none ad ogni elemento newImg per non farlo vedere e la classe w-100 ( per la larghezza)
-        newImg.classList.add(`w-100` , `d-none`);
+        newImg.classList.add(`w-100` , `d-none` , `my_corousel`);
        
         //*porto l'elemento creato come figlio di (.carousel_box )
         carouselBox.append(newImg);

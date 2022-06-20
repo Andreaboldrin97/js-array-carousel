@@ -1,4 +1,9 @@
 .box_container{
     width: 70%;
     margin: 0 auto;
+    
+}
+.my_corousel{
+    object-fit: cover;
+    height: 380px;
 }
