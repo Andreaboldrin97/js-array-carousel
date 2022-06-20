@@ -7,3 +7,25 @@ let images = [
     'https://iso.500px.com/wp-content/uploads/2021/02/Torres-Del-Paine-Sunset-By-Paul-Reiffer-2-1500x1000.jpg',
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
+    console.log(images);
+
+//? creo la variabile dell'elemento da cui voglio partire 
+
+    //?parto dell'elemento dell'array con valore 1 (i = 1)
+    let elementActive = 1 ;
+
+//* porto gli elementi dell'array nell html
+
+    //*recupero il parent dove voglio mettere gli array
+    let carouselBox = document.querySelector(`.carousel_box`);
+
+    //*creo l'elemento img 
+    let newImg = document.createElement(`img`);
+
+    //*porto l'elemento creato come figlio di (.carousel_box )
+    carouselBox.append(newImg);
+
+    //*in base al volare dell'elemento `elementActive` verrà vista nell'html img corristondente al numero di array
+    newImg.setAttribute(`src` , images[elementActive])
+
+//!
