@@ -34,12 +34,12 @@ let images = [
     //!quando premo un btn
 
     //!prendo il btn next
-    let btnNext=document.querySelector(`.btn_next`)
+    let btnNext=document.querySelector(`.btn_next`);
 
     //!quando il btnNext viene clicato fai partire la funzione 
     btnNext.addEventListener(`click` , function(){
 
         //! al click rimoviamo la classe active e d-block solo per un elemto dell'array
-        newImg[activeElement].classList.remove(`d-none`)
+        newImg[activeElement].classList.remove(`d-none`);
     })
     }
