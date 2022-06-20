@@ -43,6 +43,9 @@ let images = [
     //!prendo il btn next
     let btnNext=document.querySelector(`.btn_next`);
 
+    //!prendo il btn previus
+    let btnPrevius=document.querySelector(`.btn_previus`);
+
     //!quando il btnNext viene clicato fai partire la funzione 
     btnNext.addEventListener(`click` , function(){
 
@@ -61,9 +64,35 @@ let images = [
         //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
         if(activeElement === imgList.length){
             activeElement=0;
-            }
+        }
 
         console.log(activeElement);
 
     })
+    
+    //!quando il btnprevius viene clicato fai partire la funzione 
+    btnPrevius.addEventListener(`click` , function(){
+
+        //! al click rimoviamo la classe active e d-block solo per un elemto dell'array
+        //*dalla variabile di partenza rimuovo l'active e aggiungo la classe d-none per non farla vedere
+        imgList[activeElement].classList.remove('active');
+        imgList[activeElement].classList.add('d-none');
+
+        //*decremento il valore di 1 
+        activeElement --;
+
+        //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
+        imgList[activeElement].classList.remove('d-none');
+        imgList[activeElement].classList.add('active');
+
+        //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
+        if(activeElement === -1){
+            activeElement= imgList.length-1;
+        }
+
+        console.log(activeElement);
+
+    })
+
+
     
