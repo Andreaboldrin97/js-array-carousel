@@ -32,8 +32,9 @@ let images = [
     //? creo una variabile di partenza
     let activeElement = 0 ;
     
-    //? associo alla var imglist i figli di carouselBox cioè le img create 
+    //? associo alla var imglist i figli di carouselBox cioè le img create , per avrere la lista 
     let imgList=carouselBox.children
+    console.log(imgList)
 
     //*alla var di partenza rimuovo il d-none e aggiungo la classe active per farla vedere
     imgList[activeElement].classList.add('active');
