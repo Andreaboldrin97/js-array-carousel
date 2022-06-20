@@ -9,23 +9,29 @@ let images = [
     ];
     console.log(images);
 
-//? creo la variabile dell'elemento da cui voglio partire 
-
-    //?parto dell'elemento dell'array con valore 1 (i = 1)
-    let elementActive = 1 ;
-
 //* porto gli elementi dell'array nell html
 
     //*recupero il parent dove voglio mettere gli array
     let carouselBox = document.querySelector(`.carousel_box`);
 
+//? creo un ciclo per selezionare ogn elemento presente nell'array partendo da 0
+    for(let i = 0 ; i < images.length ; i++){
     //*creo l'elemento img 
     let newImg = document.createElement(`img`);
 
     //*porto l'elemento creato come figlio di (.carousel_box )
     carouselBox.append(newImg);
 
-    //*in base al volare dell'elemento `elementActive` verrà vista nell'html img corristondente al numero di array
-    newImg.setAttribute(`src` , images[elementActive])
+    //*cambio l'attributo di newImg (`img`) per ogni elemento dentro l'array
+    newImg.setAttribute(`src` , images[i]);
+    }
 
-//!
+//!quando premo un btn
+
+    //!prendo il btn next
+    let btnNext=document.querySelector(`.btn_next`)
+
+    //!quando il btnNext viene clicato fai partire la funzione 
+    btnNext.addEventListener(`click` , function(){
+
+    })
