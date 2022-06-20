@@ -7,7 +7,9 @@ let images = [
     'https://iso.500px.com/wp-content/uploads/2021/02/Torres-Del-Paine-Sunset-By-Paul-Reiffer-2-1500x1000.jpg',
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
-    console.log(images);
+
+    let activeElement = 0 ;
+    console.log(activeElement)
 
 //* porto gli elementi dell'array nell html
 
@@ -24,9 +26,12 @@ let images = [
 
     //*cambio l'attributo di newImg (`img`) per ogni elemento dentro l'array
     newImg.setAttribute(`src` , images[i]);
-    }
 
-//!quando premo un btn
+    //*aggiungo la classe d-none ad ogni elemento newImg per non farlo vedere e la classe w-100 ( per la larghezza)
+    newImg.classList.add(`d-none`,`w-100`,`active`);
+   
+
+    //!quando premo un btn
 
     //!prendo il btn next
     let btnNext=document.querySelector(`.btn_next`)
@@ -34,4 +39,7 @@ let images = [
     //!quando il btnNext viene clicato fai partire la funzione 
     btnNext.addEventListener(`click` , function(){
 
+        //! al click rimoviamo la classe active e d-block solo per un elemto dell'array
+        newImg[activeElement].classList.remove(`d-none`)
     })
+    }
