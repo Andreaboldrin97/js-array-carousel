@@ -13,20 +13,30 @@ let images = [
 
     //*recupero il parent dove voglio mettere gli array
     let carouselBox = document.querySelector(`.carousel_box`);
+    //*{recupero il parent dove voglio mettere gli array}
+    let imgBox = document.querySelector(`.img_box`);
 
 //? creo un ciclo per selezionare ogn elemento presente nell'array partendo da 0
     for(let i = 0 ; i < images.length ; i++){
         //*creo l'elemento img 
         let newImg = document.createElement(`img`);
+        //*{creo l'elemento img }
+        let newImgBox = document.createElement(`img`);
 
         //*cambio l'attributo di newImg (`img`) per ogni elemento dentro l'array
         newImg.setAttribute(`src` , images[i]);
+        //*{cambio l'attributo di newImg (`img`) per ogni elemento dentro l'array}
+        newImgBox.setAttribute(`src` , images[i]);
 
         //*aggiungo la classe d-none ad ogni elemento newImg per non farlo vedere e la classe w-100 ( per la larghezza)
         newImg.classList.add(`w-100` , `d-none` , `my_corousel`);
+        //*{aggiungo la classe mini_img}
+        newImgBox.classList.add(`mini_img`);
        
         //*porto l'elemento creato come figlio di (.carousel_box )
         carouselBox.append(newImg);
+        //*porto l'elemento creato come figlio di (.carousel_box )
+        imgBox.append(newImgBox);
       
     }
     //? creo una variabile di partenza
@@ -34,11 +44,17 @@ let images = [
     
     //? associo alla var imglist i figli di carouselBox cioè le img create , per avrere la lista 
     let imgList=carouselBox.children
+    //? associo alla var imglist i figli di carouselBox cioè le img create , per avrere la lista 
+    let imgListBox=imgBox.children
     console.log(imgList)
 
     //*alla var di partenza rimuovo il d-none e aggiungo la classe active per farla vedere
     imgList[activeElement].classList.add('active');
     imgList[activeElement].classList.remove('d-none');
+    //*{alla var di partenza aggiungo la classe 'img_visibility' per farla risaltare}
+    imgListBox[activeElement].classList.add('img_visibility');
+    
+    
     //!quando premo un btn
 
     //!prendo il btn next
@@ -54,6 +70,9 @@ let images = [
         //*dalla variabile di partenza rimuovo l'active e aggiungo la classe d-none per non farla vedere
         imgList[activeElement].classList.remove('active');
         imgList[activeElement].classList.add('d-none');
+        //*{dalla variabile di partenza rimuovo la classe img_visibility }
+        imgList[activeElement].classList.remove('img_visibility');
+        
 
         //*incremento il valore di 1 
         activeElement++;
