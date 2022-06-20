@@ -60,8 +60,9 @@ let images = [
 
         //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
         if(activeElement === imgList.length){
-            indexActive=0;
+            activeElement=0;
             }
+
         console.log(activeElement);
 
     })
