@@ -57,14 +57,16 @@ let images = [
         //*incremento il valore di 1 
         activeElement++;
 
+         //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
+         if(activeElement === imgList.length){
+            activeElement=0;
+        } 
+
         //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
         imgList[activeElement].classList.remove('d-none');
         imgList[activeElement].classList.add('active');
 
-        //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
-        if(activeElement === imgList.length){
-            activeElement=0;
-        }
+       
 
         console.log(activeElement);
 
@@ -81,14 +83,15 @@ let images = [
         //*decremento il valore di 1 
         activeElement --;
 
-        //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
-        imgList[activeElement].classList.remove('d-none');
-        imgList[activeElement].classList.add('active');
-
         //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
         if(activeElement === -1){
             activeElement= imgList.length-1;
         }
+
+        //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
+        imgList[activeElement].classList.remove('d-none');
+        imgList[activeElement].classList.add('active');
+
 
         console.log(activeElement);
 
