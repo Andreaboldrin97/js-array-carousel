@@ -8,9 +8,7 @@ let images = [
     'https://mymodernmet.com/wp/wp-content/uploads/2020/02/Landscape-Photographer-of-the-Year-Sander-Grefte.jpg'
     ];
 
-    let activeElement = 0 ;
-    console.log(activeElement)
-
+    
 //* porto gli elementi dell'array nell html
 
     //*recupero il parent dove voglio mettere gli array
@@ -18,19 +16,28 @@ let images = [
 
 //? creo un ciclo per selezionare ogn elemento presente nell'array partendo da 0
     for(let i = 0 ; i < images.length ; i++){
-    //*creo l'elemento img 
-    let newImg = document.createElement(`img`);
+        //*creo l'elemento img 
+        let newImg = document.createElement(`img`);
 
-    //*porto l'elemento creato come figlio di (.carousel_box )
-    carouselBox.append(newImg);
+        //*cambio l'attributo di newImg (`img`) per ogni elemento dentro l'array
+        newImg.setAttribute(`src` , images[i]);
 
-    //*cambio l'attributo di newImg (`img`) per ogni elemento dentro l'array
-    newImg.setAttribute(`src` , images[i]);
+        //*aggiungo la classe d-none ad ogni elemento newImg per non farlo vedere e la classe w-100 ( per la larghezza)
+        newImg.classList.add(`w-100` , `d-none`);
+       
+        //*porto l'elemento creato come figlio di (.carousel_box )
+        carouselBox.append(newImg);
+      
+    }
+    //? creo una variabile di partenza
+    let activeElement = 0 ;
+    
+    //? associo alla var imglist i figli di carouselBox cioè le img create 
+    let imgList=carouselBox.children
 
-    //*aggiungo la classe d-none ad ogni elemento newImg per non farlo vedere e la classe w-100 ( per la larghezza)
-    newImg.classList.add(`d-none`,`w-100`,`active`);
-   
-
+    //*alla var di partenza rimuovo il d-none e aggiungo la classe active per farla vedere
+    imgList[activeElement].classList.add('active');
+    imgList[activeElement].classList.remove('d-none');
     //!quando premo un btn
 
     //!prendo il btn next
@@ -40,6 +47,22 @@ let images = [
     btnNext.addEventListener(`click` , function(){
 
         //! al click rimoviamo la classe active e d-block solo per un elemto dell'array
-        newImg[activeElement].classList.remove(`d-none`);
+        //*dalla variabile di partenza rimuovo l'active e aggiungo la classe d-none per non farla vedere
+        imgList[activeElement].classList.remove('active');
+        imgList[activeElement].classList.add('d-none');
+
+        //*incremento il valore di 1 
+        activeElement++;
+
+        //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
+        imgList[activeElement].classList.remove('d-none');
+        imgList[activeElement].classList.add('active');
+
+        //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
+        if(activeElement === imgList.length){
+            indexActive=0;
+            }
+        console.log(activeElement);
+
     })
-    }
+    
