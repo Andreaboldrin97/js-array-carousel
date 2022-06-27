@@ -124,4 +124,37 @@ let images = [
     })
 
 
+
+
+
+    //? aggiungiamo una time function
+
+    let clock = setInterval(function(){
+         //! al click rimoviamo la classe active e d-block solo per un elemto dell'array
+        //*dalla variabile di partenza rimuovo l'active e aggiungo la classe d-none per non farla vedere
+        imgList[activeElement].classList.remove('active');
+        imgList[activeElement].classList.add('d-none');
+        //*{dalla variabile di partenza rimuovo la classe img_visibility }
+        imgListBox[activeElement].classList.remove('img_visibility');
+        
+
+        //*incremento il valore di 1 
+        activeElement++;
+
+         //* se active elemente ha rigiunto la lunghezza dell'array allora torna a 0
+         if(activeElement === imgList.length){
+            activeElement=0;
+        } 
+
+        //*al nuovo valore rimuovo il d-none e aggiungo la classe active per farla vedere
+        imgList[activeElement].classList.remove('d-none');
+        imgList[activeElement].classList.add('active');
+         //*{dalla variabile di partenza rimuovo la classe img_visibility }
+         imgListBox[activeElement].classList.add('img_visibility');
+
+       
+
+    } , 5000)
+
+
     
